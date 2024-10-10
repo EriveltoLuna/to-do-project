@@ -1,1 +1,1 @@
-dependencies: express, mongodb, mongoose and nodemon -D
+Check depedencies.md to see a list of instructions!
