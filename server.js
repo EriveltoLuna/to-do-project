@@ -1,9 +1,9 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
-const Data = require('./schema/data.schema.js');
 const app = express();
 const dataRoute = require('./routes/data.routes.js');
+const port = process.env.PORT || 10000;
 
 dotenv.config();
 app.use(express.json());
@@ -13,8 +13,8 @@ mongoose
     .connect(process.env.URI)
     .then(() => {
         console.log('*** connected to database!');
-        app.listen(3000, () => {
-            console.log('*** server is running on 3000');
+        app.listen(port, () => {
+            console.log('*** server is running on PORT');
         });
     })
     .catch(() => {
